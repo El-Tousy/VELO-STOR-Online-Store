@@ -63,7 +63,7 @@ Dieses Repository dient als praktischer Nachweis meiner Motivation, Lernbereitsc
 - **Anomaly Detection Program:** 👉 https://github.com/Nexus-Vertex/Anomaly-Detection-System
 
 ## 👤 Author
-- GitHub : [@Nexus-Vertex](https://github.com/Nexus-Vertex)
+- GitHub : [@El-Tousy](https://github.com/El-Tousy)
 - Email : leilaeltousy@gmail.com
 
 ---
