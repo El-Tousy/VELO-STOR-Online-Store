@@ -176,9 +176,6 @@ velo-stor/
 │   ├── tank-m41.html            # Product — Tank M41
 │   ├── dualtron-togo.html       # Product — Dualtron Togo
 │   │
-│   ├── admin.html               # Admin view
-│   ├── control.html             # Control panel
-│   │
 │   ├── about.html
 │   ├── contact.html
 │   ├── privacy.html
@@ -189,11 +186,6 @@ velo-stor/
 │   ├── js/
 │   └── images/
 │
-├── docs/
-│   ├── demo.gif
-│   └── screenshots/
-│
-├── netlify.toml                 # Clean-URL redirects
 ├── LICENSE
 └── README.md
 ```
@@ -246,7 +238,7 @@ Deployed on Netlify with continuous deployment: every push to `main` publishes a
 
 ## Author
 
-**Leila El-Tousy** — Computer Science student, Morocco
+**El-Tousy** — Computer Science student, Morocco
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/El-Tousy)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:leilaeltousy@gmail.com)
