@@ -1,8 +1,8 @@
 <div align="center">
 
-# VELO STOR
+# Velo.Stor
 
-**An e-commerce storefront for bikes, e-bikes and scooters — connected to a WhatsApp AI assistant for conversational shopping.**
+**An Arabic-first, right-to-left e-commerce storefront for bikes, e-bikes and scooters — built in vanilla HTML/CSS/JS and connected to a WhatsApp AI assistant.**
 
 [**🌐 Live Demo**](https://velo-stor.netlify.app/) · [**🤖 WhatsApp Bot**](https://github.com/El-Tousy/Meta-API-python-whatsapp-bot) · [**📸 Screenshots**](#screenshots)
 
@@ -10,15 +10,16 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![Netlify](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
+![RTL](https://img.shields.io/badge/Layout-RTL-6E4AFF?style=flat)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 
 [🇬🇧 English](README.md) · [🇩🇪 Deutsch](README.de.md)
 
 </div>
 
-<!-- TODO: replace with a 10-20s GIF of someone browsing the catalogue and opening a product page.
-     Record with Kap (macOS) or ScreenToGif (Windows), save to docs/demo.gif -->
-![VELO STOR demo](docs/demo.gif)
+<!-- TODO: 10-20s GIF showing the RTL catalogue, a category page and a product page.
+     Record with ScreenToGif (Windows) or Kap (macOS), save as docs/demo.gif -->
+![Velo.Stor demo](docs/demo.gif)
 
 ---
 
@@ -41,38 +42,41 @@
 
 ## Overview
 
-VELO STOR is a multi-page online store for bicycles, electric bikes and scooters, built from scratch with vanilla HTML, CSS and JavaScript — no framework, no build step.
+Velo.Stor is a multi-page online store for bicycles, electric bikes and scooters, aimed at the Moroccan market. The interface is in Arabic with a right-to-left layout, while product categories keep their French names — the way bike shops in Casablanca actually label them.
 
-The project has two goals. The first is to build a complete storefront by hand: catalogue, category filtering, product detail pages and an admin view, without relying on a template or a CMS. The second is to connect that storefront to a [WhatsApp bot](https://github.com/El-Tousy/Meta-API-python-whatsapp-bot) built with the Meta Cloud API, so a customer can browse the same catalogue through a conversation instead of a web page.
+It is built entirely in vanilla HTML, CSS and JavaScript: no framework, no build step, no dependencies. Every layout decision, including the full RTL direction handling, is written by hand.
 
-Together the two repositories form one system: a web storefront and a conversational front-end sharing the same product data.
+The storefront is one half of a two-part system. The other half is a [WhatsApp bot](https://github.com/El-Tousy/Meta-API-python-whatsapp-bot) built with the Meta Cloud API, which lets a customer browse the same catalogue through a conversation instead of a web page — a natural fit in a market where WhatsApp is the dominant channel for small-business commerce.
 
-> **Note on the catalogue.** The products and prices are sample data used to test the store's behaviour. This is a technical project, not a live commercial site.
+> **Note on the catalogue.** Products and prices are sample data used to exercise the store's behaviour. This is a technical project, not a live commercial site.
 
 ---
 
 ## Features
 
 ### Storefront
-- **Category catalogue** — products split across mountain bikes, electric bikes and scooters
-- **Product detail pages** — dedicated page per model with specifications and images
-- **Responsive layout** — usable from mobile through desktop
-- **Static informational pages** — About, Contact, Privacy Policy and Terms
+- **Arabic interface, RTL layout** — direction, alignment, navigation order and typography built for right-to-left reading
+- **Bilingual labelling** — Arabic UI with French category names (Vélo VTT, Vélo Électrique, Trotinette), matching local usage
+- **Category catalogue** — mountain bikes, electric bikes and scooters
+- **Product detail pages** — one page per model, with specifications and imagery
+- **Responsive layout** — mobile through desktop, hand-written breakpoints
+- **Clean URLs** — `/products_vtt` rather than `/products_vtt.html`, via Netlify redirects
+- **Informational pages** — About, Contact, Privacy Policy, Terms
 
 ### Admin
-- **Product management view** — catalogue overview from an administrative interface
-- **Control panel** — <!-- TODO: describe in one line what control.html actually does -->
+- **Account and product management view** — catalogue overview from an administrative interface
+- **Control panel** — <!-- TODO: one line on what control.html actually does -->
 
 ### WhatsApp integration
-- **Conversational browsing** — customers explore the catalogue through WhatsApp messages
-- **Automated replies** — product information served by the bot without human intervention
-- **Shared catalogue** — the bot answers from the same product set shown on the site
+- **Conversational browsing** — customers explore the catalogue in a WhatsApp thread
+- **Automated replies** — product information served without human intervention
+- **Shared catalogue** — the bot answers from the same product set the site displays
 
 ---
 
 ## Screenshots
 
-| Homepage | Catalogue |
+| Homepage (RTL) | Catalogue |
 |---|---|
 | ![Homepage](images/screenshots/screenshot1.png) | ![Catalogue](images/screenshots/screenshot2.png) |
 
@@ -92,10 +96,10 @@ Together the two repositories form one system: a web storefront and a conversati
 
 | Layer | Technology | Why |
 |---|---|---|
-| Markup | HTML5 | Semantic, one page per product and per category |
-| Styling | CSS3 | Custom stylesheet — no framework, to keep full control over the layout |
-| Behaviour | Vanilla JavaScript | Navigation, filtering and interactions without a build step |
-| Hosting | Netlify | Continuous deployment straight from the `main` branch |
+| Markup | HTML5 | Semantic, `dir="rtl"` and `lang="ar"` at the document root |
+| Styling | CSS3 | Hand-written stylesheet — full control over RTL direction and breakpoints |
+| Behaviour | Vanilla JavaScript | Navigation and interactions with no build step |
+| Hosting | Netlify | Continuous deployment from `main`, clean-URL redirects |
 | Conversational layer | Python, Flask, Meta WhatsApp Cloud API | See the [bot repository](https://github.com/El-Tousy/Meta-API-python-whatsapp-bot) |
 | Versioning | Git & GitHub | — |
 
@@ -105,10 +109,10 @@ Together the two repositories form one system: a web storefront and a conversati
 
 ```mermaid
 flowchart LR
-    A[Customer] --> B[VELO STOR website<br/>HTML / CSS / JS<br/>Netlify]
+    A[Customer] --> B["Velo.Stor website<br/>HTML / CSS / JS — RTL<br/>Netlify"]
     A --> C[WhatsApp]
     C --> D[Meta Cloud API]
-    D --> E[Flask webhook<br/>Python]
+    D --> E["Flask webhook<br/>Python"]
     E --> F[OpenAI API]
     E --> G[(Product catalogue)]
     B --> G
@@ -117,19 +121,19 @@ flowchart LR
     D --> C
 ```
 
-The website is fully static: every page is served as-is, with no server-side rendering. The conversational path runs through a separate Flask service that receives Meta webhooks, enriches the reply with OpenAI, and answers from the same catalogue the site displays.
+The website is fully static — every page is served as-is, with no server-side rendering. The conversational path runs through a separate Flask service that receives Meta webhooks, enriches the reply with OpenAI, and answers from the same catalogue the site displays.
 
 ---
 
 ## Getting Started
 
-The site is static, so there is nothing to build and no dependencies to install.
+The site is static: nothing to build, no dependencies to install.
 
 ### Prerequisites
 
 - Any modern browser
 - Git
-- Optionally, Node.js 18+ if you want to serve the site over HTTP rather than `file://`
+- Optionally, Node.js 18+ to serve the site over HTTP rather than `file://`
 
 ### Installation
 
@@ -140,44 +144,42 @@ cd VELO-STOR-Online-Store
 
 ### Running locally
 
-Open `index.html` directly in your browser, or serve the folder over HTTP:
-
 ```bash
 npx serve .
 # then open http://localhost:3000
 ```
 
-Serving over HTTP is recommended: relative paths and any `fetch` calls behave differently under the `file://` protocol.
+Serving over HTTP is recommended rather than opening `index.html` directly: relative paths, and the clean-URL routes used in production, do not resolve under the `file://` protocol.
 
 ### Connecting the WhatsApp bot
 
-The bot lives in its own repository and runs independently. Follow the setup instructions in [Meta-API-python-whatsapp-bot](https://github.com/El-Tousy/Meta-API-python-whatsapp-bot) — the storefront needs no configuration on its side.
+The bot runs independently in its own repository. Follow the setup in [Meta-API-python-whatsapp-bot](https://github.com/El-Tousy/Meta-API-python-whatsapp-bot) — the storefront needs no configuration on its side.
 
 ---
 
 ## Project Structure
 
 ```
-VELO-STOR-Online-Store/
+velo-stor/
 │
-├── index.html                  # Homepage
+├── index.html                   # Homepage
 │
 ├── pages/
-│   ├── products.html           # Full catalogue
-│   ├── products_vtt.html       # Category — mountain bikes
-│   ├── products_electrique.html# Category — electric bikes
-│   ├── products_trotinette.html# Category — scooters
+│   ├── products.html            # Full catalogue
+│   ├── products_vtt.html        # Category — mountain bikes
+│   ├── products_electrique.html # Category — electric bikes
+│   ├── products_trotinette.html # Category — scooters
 │   │
-│   ├── ciclista.html           # Product — Ciclista
-│   ├── sport_bike.html         # Product — Sport Bike
-│   ├── shine_s.html            # Product — Shine S
-│   ├── tank-m41.html           # Product — Tank M41
-│   ├── dualtron-togo.html      # Product — Dualtron Togo
+│   ├── ciclista.html            # Product — Ciclista
+│   ├── sport_bike.html          # Product — Sport Bike
+│   ├── shine_s.html             # Product — Shine S
+│   ├── tank-m41.html            # Product — Tank M41
+│   ├── dualtron-togo.html       # Product — Dualtron Togo
 │   │
-│   ├── admin.html              # Admin view
-│   ├── control.html            # Control panel
+│   ├── admin.html               # Admin view
+│   ├── control.html             # Control panel
 │   │
-│   ├── About.html
+│   ├── about.html
 │   ├── contact.html
 │   ├── privacy.html
 │   └── terms.html
@@ -191,6 +193,7 @@ VELO-STOR-Online-Store/
 │   ├── demo.gif
 │   └── screenshots/
 │
+├── netlify.toml                 # Clean-URL redirects
 ├── LICENSE
 └── README.md
 ```
@@ -201,38 +204,42 @@ VELO-STOR-Online-Store/
 
 ## Deployment
 
-The site is deployed on Netlify with continuous deployment: every push to `main` triggers a new build.
+Deployed on Netlify with continuous deployment: every push to `main` publishes a new version.
 
 | Setting | Value |
 |---|---|
 | Build command | *(none — static site)* |
 | Publish directory | `.` |
+| Redirects | `netlify.toml` — strips `.html` from public routes |
 | Production URL | https://velo-stor.netlify.app/ |
 
 ---
 
 ## Technical Challenges and Learnings
 
-- **Consistency across a multi-page static site.** With no framework and no templating engine, the header, footer and navigation are duplicated in every file. Keeping them synchronised by hand taught me concretely why component-based frameworks exist — and what problem they actually solve.
+- **Building a right-to-left layout by hand.** RTL is not a mirrored left-to-right page. Margins, padding, flex direction, icon orientation and scroll behaviour all have to be reconsidered individually. Working without a framework that abstracts `direction` away taught me what those abstractions are actually doing, and where they leak.
 
-- **Structuring a catalogue without a database.** Products are represented as static pages rather than records. This works for a small catalogue but does not scale: adding a product means creating a file. The next iteration moves the catalogue into a JSON file consumed by JavaScript.
+- **Mixing Arabic and Latin scripts in one interface.** Category names stay in French because that is how the products are known locally, which means Arabic and Latin text share the same line. Getting line height, alignment and font fallbacks to look deliberate rather than accidental took more iteration than any other part of the CSS.
 
-- **Sharing one catalogue across two interfaces.** The website and the WhatsApp bot must describe the same products. Keeping both in sync showed why a single source of truth matters more than either interface on its own.
+- **Consistency across a multi-page static site.** With no templating engine, the header and footer are duplicated in every file and kept in sync by hand. This is the clearest argument for component-based frameworks I have encountered — not from a tutorial, but from maintaining the duplication myself.
 
-- **Responsive design from scratch.** Building the breakpoints by hand, without a utility framework, forced me to understand flexbox and grid properly instead of composing prebuilt classes.
+- **A catalogue without a database.** Products are pages, not records: adding a product means creating a file. Workable at this size, unworkable beyond it. The next iteration moves the catalogue into a JSON file consumed by JavaScript.
+
+- **One catalogue, two front-ends.** The site and the WhatsApp bot must describe the same products. Keeping them aligned showed why a single source of truth matters more than either interface on its own.
 
 ---
 
 ## Roadmap
 
-- [x] Static storefront with category pages and product detail pages
-- [x] Netlify deployment
+- [x] RTL Arabic storefront with category and product pages
+- [x] Netlify deployment with clean URLs
 - [x] WhatsApp bot integration
 - [ ] Move the catalogue into a single `products.json` consumed by JavaScript
 - [ ] Reorganise the repository into `pages/` and `assets/`
+- [ ] Optional French / Arabic language switch
 - [ ] Shopping cart with `localStorage`
 - [ ] Client-side search and filtering
-- [ ] Accessibility pass (alt text, keyboard navigation, contrast)
+- [ ] Accessibility pass — alt text, keyboard navigation, contrast
 - [ ] Lighthouse audit and performance budget
 
 ---
