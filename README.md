@@ -17,10 +17,6 @@
 
 </div>
 
-<!-- TODO: 10-20s GIF showing the RTL catalogue, a category page and a product page.
-     Record with ScreenToGif (Windows) or Kap (macOS), save as docs/demo.gif -->
-![Velo.Stor demo](docs/demo.gif)
-
 ---
 
 ## Table of Contents
