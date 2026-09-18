@@ -17,10 +17,6 @@
 
 </div>
 
-<!-- TODO: 10-20s GIF, das den RTL-Katalog, eine Kategorieseite und eine Produktseite zeigt.
-     Aufnahme mit ScreenToGif (Windows) oder Kap (macOS), speichern unter docs/demo.gif -->
-![Velo.Stor Demo](docs/demo.gif)
-
 ---
 
 ## Inhaltsverzeichnis
@@ -176,9 +172,6 @@ velo-stor/
 │   ├── tank-m41.html            # Produkt — Tank M41
 │   ├── dualtron-togo.html       # Produkt — Dualtron Togo
 │   │
-│   ├── admin.html               # Admin-Ansicht
-│   ├── control.html             # Kontrollpanel
-│   │
 │   ├── about.html
 │   ├── contact.html
 │   ├── privacy.html
@@ -189,11 +182,6 @@ velo-stor/
 │   ├── js/
 │   └── images/
 │
-├── docs/
-│   ├── demo.gif
-│   └── screenshots/
-│
-├── netlify.toml                 # Clean-URL-Redirects
 ├── LICENSE
 └── README.md
 ```
@@ -246,7 +234,7 @@ Deployt auf Netlify mit kontinuierlichem Deployment: jeder Push auf `main` verö
 
 ## Autorin
 
-**Leila El-Tousy** — Informatikstudentin, Marokko
+**El-Tousy** — Informatikstudentin, Marokko
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/El-Tousy)
 [![E-Mail](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:leilaeltousy@gmail.com)
